@@ -15,14 +15,14 @@ class MoviesView(Resource):
             'year': request.args.get('year'),
     }
 
-    all_movie = movie_service.filters(data)
+
 
         return movies_schema.dump(all_movie), 200
 
     def post(self):
         data = request.json
         new_movie = movie_service.add_movie(data)
-        return '', 201 {'location': f'/movies/{new_movie.id}'}
+        return '', 201
 
 
 @movie_ns.route('/<int:mid>')

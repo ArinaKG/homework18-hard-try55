@@ -3,7 +3,7 @@ from dao.movie_dao import MovieDao
 
 class MovieService:
 
-    def __init__(self, dao MovieDao):
+    def __init__(self, dao: MovieDao):
         self.dao = dao
 
     def get_one(self, mid):
