@@ -1,11 +1,11 @@
-from flask_restx import Resourse, Namespace
+from flask_restx import Resourсe, Namespace
 from implemented import director_service, director_schema, directors_schema
 
 directors_ns = Namespace('directors')
 
 
 @directors_ns.route('/')
-class DirectorView(Resourse):
+class DirectorView(Resourсe):
 
     def get(self):
         directors = director_service.get_all()
@@ -13,7 +13,7 @@ class DirectorView(Resourse):
 
 
 @directors_ns.route('/<int:did>')
-class DirectorView(Resourse):
+class DirectorView(Resourсe):
 
     def get(self, did):
         director = director_service.get_by_id(did)

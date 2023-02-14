@@ -9,15 +9,8 @@ movie_ns = Namespace('movies')
 @movie_ns.route('/')
 class MoviesView(Resource):
     def get(self):
-        data = {
-            'director_id': request.args.get('director_id'),
-            'genre_id': request.args.get('genre_id'),
-            'year': request.args.get('year'),
-    }
-
-
-
-        return movies_schema.dump(all_movie), 200
+        all_movies = movie_service.get_all()
+        return movies_schema.dump(all_movies), 200
 
     def post(self):
         data = request.json
