@@ -23,7 +23,7 @@ class MovieDao:
     def get_by_year(self, year):
         return self.session.query(Movie).filter(Movie.year == year).all()
 
-    def create(self, **data):
+    def create(self, data):
         new_movie = Movie(**data)
         self.session.add(new_movie)
         self.session.commit()
