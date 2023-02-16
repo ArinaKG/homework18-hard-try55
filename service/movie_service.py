@@ -12,6 +12,7 @@ class MovieService:
     def get_all_movies(self):
         return self.dao.get_all_movies()
 
+
     def update(self, data):
         mid = data.get('id')
         movie = self.get_one(mid)

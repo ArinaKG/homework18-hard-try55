@@ -22,6 +22,7 @@ class MoviesView(Resource):
         res = MovieSchema(many=True).dump(all_movies)
         return res, 200
 
+
     def post(self):
         data = request.json
         new_movie = movie_service.add_movie(data)
