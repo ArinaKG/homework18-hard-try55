@@ -9,7 +9,7 @@ class MovieService:
     def get_one(self, mid):
         return self.dao.get_one(mid)
 
-    def get_all(self):
+    def get_all_movies(self):
         return self.dao.get_all_movies()
 
     def update(self, data):
