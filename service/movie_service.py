@@ -40,7 +40,7 @@ class MovieService:
         elif data.get('year') is not None:
             return self.dao.get_by_year(data.get('year'))
         else:
-            return self.dao.get_all()
+            return self.dao.get_all_movies()
 
     def del_movie(self, mid):
         movie = self.get_one(mid)
