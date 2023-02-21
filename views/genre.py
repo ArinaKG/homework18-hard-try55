@@ -4,7 +4,7 @@ from implemented import genre_service, genre_schema, genres_schema
 genre_ns = Namespace('genres')
 
 
-@genre_ns.route('/')
+@genre_ns.route('/<int:gid>')
 class GenresView(Resource):
 
     def get(self):

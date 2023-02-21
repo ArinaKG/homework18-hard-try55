@@ -18,7 +18,7 @@ class MoviesView(Resource):
             "genre_id":  genre,
             "year": year,
         }
-        all_movies = movie_service.get_all_movies(filters)
+        all_movies = movie_service.filters(filters)
         res = MovieSchema(many=True).dump(all_movies)
         return res, 200
 
